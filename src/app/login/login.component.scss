@@ -1,0 +1,13 @@
+.mainDiv {
+    display: flex; width: 100vw; height: 100vh;
+}
+
+.mainDiv div:first-child {
+    width: 50%; height: 100%; background-color: rgb(114, 66, 0);
+    display: grid; justify-content: center; align-items: center;
+}
+
+.mainDiv div:nth-child(2) {
+    width: 50%; height: 100%; background-color: rgb(183, 198, 24);
+    display: grid; justify-content: center; align-items: center;
+}
