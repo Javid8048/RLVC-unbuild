@@ -1,13 +1,28 @@
 .mainDiv {
-    display: flex; width: 100vw; height: 100vh;
+    display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center; background-color: black;
+    background-image: url("src/assets/img/sky.gif");
 }
 
-.mainDiv div:first-child {
-    width: 50%; height: 100%; background-color: rgb(114, 66, 0);
-    display: grid; justify-content: center; align-items: center;
+.formDiv {
+    width: 20rem;
+    height: 20rem;
+    display: grid;
+    text-align: center;
+    background-color: white;
+    padding: 1rem;
 }
 
-.mainDiv div:nth-child(2) {
-    width: 50%; height: 100%; background-color: rgb(183, 198, 24);
-    display: grid; justify-content: center; align-items: center;
+hr {
+    width: 100%;
+    height: 0;
 }
+
+// .mainDiv div:first-child {
+//     width: 50%; height: 100%; background-color: rgb(114, 66, 0);
+//     display: grid; justify-content: center; align-items: center;
+// }
+
+// .mainDiv div:nth-child(2) {
+//     width: 50%; height: 100%; background-color: rgb(183, 198, 24);
+//     display: grid; justify-content: center; align-items: center;
+// }
