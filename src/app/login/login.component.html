@@ -7,12 +7,27 @@
       <h3>Have a calling ID</h3>
       <button class="btn btn-primary" routerLink="joinCall">Join a call</button>
     </div> -->
-    <div class="formDiv">
+    <div class="formDiv" *ngIf="callJson.loginPage">
       <h1>Welcome to RLVC</h1>
       <h3>What you want to do ?</h3>
       <hr>
-      <button class="btn btn-primary" routerLink="joinCall">Join a call</button>
+      <button class="btn btn-primary" (click)="callJson.loginPage = false; callJson.joinCall = true">Join a call</button>
       <hr>
-      <button class="btn btn-primary" routerLink="makeCall">Make a call</button>
+      <button class="btn btn-primary" (click)="callJson.loginPage = false; callJson.makeCall = true">Make a call</button>
+    </div>
+    <div class="formDiv" *ngIf="callJson.makeCall">
+      <h1>Make a call</h1>
+      <h3>Enter your name and make a call</h3>
+      <input type="text" placeholder="name">
+      <button class="btn btn-primary" (click)="callJson.loginPage = true; callJson.makeCall = false">Make call</button>
+      <h5 class="homeBtn" (click)="callJson.loginPage = true; callJson.makeCall = false">Main page</h5>
+    </div>
+    <div class="formDiv" *ngIf="callJson.joinCall">
+      <h1>Join a call</h1>
+      <h3>Enter your name and caller id</h3>
+      <input type="text" placeholder="Name">
+      <input type="text" placeholder="Call id">
+      <button class="btn btn-primary" >Join Call</button>
+      <h5 class="homeBtn" (click)="callJson.loginPage = true; callJson.joinCall = false">Main page</h5>
     </div>
   </div>

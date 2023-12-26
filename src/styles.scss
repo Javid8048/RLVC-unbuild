@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 * {
-    box-sizing: border-box;
     font-family: Satisfy, "Roboto";
 }
 body {
@@ -29,6 +28,8 @@ body {
 
     border: 1px solid transparent;
     border-radius: .375rem;
+
+    cursor: pointer
 }
 
 .btn-primary
@@ -69,4 +70,17 @@ body {
 .show > .btn-primary.dropdown-toggle:focus
 {
     box-shadow: none, 0 0 0 0 rgba(94, 114, 228, .5);
+}
+
+input {
+    padding: 0.5rem;
+    margin: 1rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input::placeholder  {
+    text-align: center;
+    font-family: Satisfy, "Roboto";
+    color: black;
 }
