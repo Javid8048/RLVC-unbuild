@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  @ViewChild("joinCallName") joinCallName!: ElementRef;
+  @ViewChild("joinCallId") joinCallId!: ElementRef;
+  @ViewChild("makeCallName") makeCallName!: ElementRef;
+
+  constructor( private router: Router) {}
+
   callJson = {makeCall: false, joinCall: false, loginPage: true}
+
+  joinCall(e: Event) {
+    e.preventDefault();
+    if(!this.joinCallName.nativeElement.value.trim()) alert("Required name")
+    else if(!this.joinCallId.nativeElement.value.trim()) alert("Required Call id")
+    else {
+      localStorage.setItem("userName", this.joinCallName.nativeElement.value)
+      localStorage.setItem("callId", this.joinCallId.nativeElement.value)
+      this.router.navigateByUrl("meetingRoom")
+    }
+  }
+
+  makeCall(e: Event) {
+    e.preventDefault()
+    if(!this.makeCallName.nativeElement.value.trim()) alert("Required name")
+    else {
+      localStorage.setItem("callerName", this.makeCallName.nativeElement.value)
+      this.router.navigate(["meetingRoom"])
+    }
+  }
 }

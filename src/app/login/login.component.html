@@ -15,19 +15,21 @@
       <hr>
       <button class="btn btn-primary" (click)="callJson.loginPage = false; callJson.makeCall = true">Make a call</button>
     </div>
+
     <div class="formDiv" *ngIf="callJson.makeCall">
       <h1>Make a call</h1>
       <h3>Enter your name and make a call</h3>
-      <input type="text" placeholder="name">
-      <button class="btn btn-primary" (click)="callJson.loginPage = true; callJson.makeCall = false">Make call</button>
+      <input type="text" placeholder="name" #makeCallName (keyup.enter)="makeCall($event)">
+      <button class="btn btn-primary" (click)="makeCall($event)">Make call</button>
       <h5 class="homeBtn" (click)="callJson.loginPage = true; callJson.makeCall = false">Main page</h5>
     </div>
+
     <div class="formDiv" *ngIf="callJson.joinCall">
       <h1>Join a call</h1>
       <h3>Enter your name and caller id</h3>
-      <input type="text" placeholder="Name">
-      <input type="text" placeholder="Call id">
-      <button class="btn btn-primary" >Join Call</button>
+      <input type="text" placeholder="Name" #joinCallName>
+      <input type="text" placeholder="Call id" #joinCallId (keyup.enter)="joinCall($event)">
+      <button class="btn btn-primary" (click)="joinCall($event)" >Join Call</button>
       <h5 class="homeBtn" (click)="callJson.loginPage = true; callJson.joinCall = false">Main page</h5>
     </div>
   </div>
