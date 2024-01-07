@@ -1,3 +1,24 @@
 .mainDiv {
-    width: 100vw; height: 100vh; display: grid; grid-template-rows: 1fr 5fr 3fr;
+    width: 100vw; height: 100vh; display: grid; grid-template-rows: 1fr 5fr 2fr;
 }
+
+.headerSec {
+    background-color: rgb(126, 124, 124);
+}
+.videoSec {
+    background-color: rgb(199, 199, 199);
+    display: grid;
+    grid-auto-flow: column;
+    span {
+        display: grid;
+        justify-content: center;
+        text-align: center;
+    }
+}
+.buttonSec {
+    background-color: gray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+

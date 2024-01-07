@@ -12,7 +12,7 @@ export class AuthGuardService implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean | UrlTree {
     // Navigate to the login page with extras
     try {
-      let data = localStorage.getItem("userName");
+      let data = sessionStorage.getItem("userName");
       if (data == undefined) {
         this.router.navigate([""])
         throw new Error("not login")

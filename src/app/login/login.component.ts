@@ -20,9 +20,10 @@ export class LoginComponent {
     if(!this.joinCallName.nativeElement.value.trim()) alert("Required name")
     else if(!this.joinCallId.nativeElement.value.trim()) alert("Required Call id")
     else {
-      localStorage.setItem("userName", this.joinCallName.nativeElement.value)
-      localStorage.setItem("callId", this.joinCallId.nativeElement.value)
-      this.router.navigateByUrl("meetingRoom")
+      sessionStorage.setItem("userName", this.joinCallName.nativeElement.value)
+      sessionStorage.setItem("callId", this.joinCallId.nativeElement.value)
+      this.router.navigateByUrl("meetingRoom");
+      
     }
   }
 
@@ -30,7 +31,7 @@ export class LoginComponent {
     e.preventDefault()
     if(!this.makeCallName.nativeElement.value.trim()) alert("Required name")
     else {
-      localStorage.setItem("callerName", this.makeCallName.nativeElement.value)
+      sessionStorage.setItem("userName", this.makeCallName.nativeElement.value)
       this.router.navigate(["meetingRoom"])
     }
   }
