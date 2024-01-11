@@ -1,5 +1,7 @@
 <main class="mainDiv">
-    <section class="headerSec"></section>
+    <section class="headerSec">
+        Join code {{'CHR456'}}
+    </section>
     <section class="videoSec">
         <span>
             <h1>You</h1>
@@ -9,11 +11,13 @@
             <h1>Remote</h1>
             <video #remoteVideo autoplay playsinline></video>
         </span>
+
     </section>
     <section class="buttonSec">
         <!-- <h1>{{userName | uppercase}}</h1> -->
-        <button class="btn btn-default" (click)="startCall()">Start the call</button>
-        <button class="btn btn-default" (click)="joinCall()">Join the call</button>
+        <button class="btn btn-default" (click)="camera()">Camera</button>
+        <button class="btn btn-default" (click)="mike()">Mike</button>
+        <button class="btn btn-default" (click)="joinCode()">Copy join code</button>
         <button class="btn btn-danger" (click)="endCall()">End the Call</button>
     </section>
     <section></section>
