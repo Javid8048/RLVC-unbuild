@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
+import { WebRTCService } from '../services/web-rtc.service';
 
 @Component({
   selector: 'app-meeting-room',
@@ -18,8 +19,9 @@ export class MeetingRoomComponent implements OnDestroy {
 
   isCameraOn = true;
   isMikeOn = true
+  
 
-  constructor(private router: Router, private route: ActivatedRoute, private firestore: AngularFirestore ) {
+  constructor(private router: Router, private route: ActivatedRoute, private firestore: AngularFirestore, private webrtcService: WebRTCService ) {
     this.startCameraAndAudio()
   }
 
